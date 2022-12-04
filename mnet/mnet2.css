@@ -1,0 +1,812 @@
+@charset "UTF-8";
+@import url(/reset.css);
+@font-face {
+  font-family: pretendard-Regular;
+  src: url(./font/Pretendard-Regular.woff);
+}
+@font-face {
+  font-family: pretendard-Medium;
+  src: url(./font/Pretendard-Medium.woff);
+}
+@font-face {
+  font-family: pretendard-Bold;
+  src: url(./font/Pretendard-Bold.woff);
+}
+@font-face {
+  font-family: pretendard-SemiBold;
+  src: url(./font/Pretendard-SemiBold.woff);
+}
+h2 {
+  color: #FF0571;
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+#sect1 .intro {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#sect1 .intro header {
+  z-index: 99;
+  margin: auto;
+  width: 72%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: space-between;
+}
+#sect1 .intro .fullvideo {
+  position: relative;
+  height: 56.25vw;
+}
+#sect1 .intro .fullvideo video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#sect1 .intro .desc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  z-index: 99;
+}
+#sect1 .intro .desc h2 {
+  color: #fff;
+}
+#sect1 .intro p.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgb(68, 255, 58);
+  width: 100%;
+  height: 100vh;
+  z-index: 90;
+  background-image: linear-gradient(90deg, #ff0571 0%, #ff4a96 50%, #ff92c2 100%);
+}
+
+#sect2 .tabmenu {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid orange;
+}
+#sect2 .tabmenu p.on {
+  color: #FF0571;
+  font-weight: bold;
+}
+#sect2 .contents {
+  position: relative;
+}
+#sect2 .contents .tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+#sect2 .contents .tab.on {
+  opacity: 1;
+}
+#sect2 .contents .tab .main figure {
+  opacity: 0;
+}
+#sect2 .contents .tab .main figure.on {
+  opacity: 1;
+}
+#sect2 .contents .tab .info {
+  background: #FF0571;
+  color: #ffffff;
+}
+#sect2 .contents .tab .info .pg {
+  opacity: 0;
+}
+#sect2 .contents .tab .info .pg.on {
+  opacity: 1;
+}
+
+#sect3 {
+  background: #232323;
+}
+#sect3 .slideContainer {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#sect3 .slideContainer .videoWrap {
+  position: absolute;
+  left: -1%;
+  transform: translate(-14%, 20%);
+  width: 300%;
+  display: flex;
+  gap: 30px;
+}
+#sect3 .slideContainer .videoWrap .video-slide {
+  width: 20%;
+}
+#sect3 .slideContainer .videoWrap .video-slide .v_info {
+  width: 20vw;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+#sect3 .slideContainer .videoWrap .video-slide .v_info p {
+  color: #fff;
+  width: 70%;
+  text-align: center;
+  padding-top: 20px;
+  margin: 80px auto 10px;
+}
+#sect3 .slideContainer .videoWrap .video-slide .v_info p:nth-child(1) {
+  font-size: 1.5vw;
+}
+#sect3 .slideContainer .videoWrap .video-slide video {
+  width: 100%;
+}
+#sect3 .slideContainer .pagenation {
+  position: absolute;
+  left: 45%;
+  bottom: 20%;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 60px;
+}
+#sect3 .slideContainer .pagenation img {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+#sect4 .list {
+  height: 70%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+#sect4 .list .new {
+  text-align: center;
+}
+#sect4 .list .new.on:hover p.on {
+  opacity: 1;
+}
+#sect4 .list .new.on:hover figure img {
+  border: 2px solid #FF0571;
+}
+#sect4 .list .new p {
+  opacity: 0;
+}
+#sect4 .sns {
+  height: 30%;
+  background: #232323;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+/* 모바일--------------------------- */
+@media screen and (max-width: 516px) {
+  section {
+    width: 100%;
+    height: 100vh;
+  }
+  h2 {
+    font-size: 4.5vw;
+    font-family: pretendard-Bold;
+    padding-top: 80px;
+  }
+  #sect1 header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #sect1 header h1 {
+    display: inline-block;
+  }
+  #sect1 header h1.logo {
+    height: 25px;
+    width: 50px;
+  }
+  #sect1 header h1.logo img {
+    width: 100%;
+  }
+  #sect1 header h1.menu {
+    height: 25px;
+    width: 25px;
+  }
+  #sect1 header h1.menu img {
+    width: 100%;
+  }
+  #sect2 .tabmenu {
+    flex: 1;
+    gap: 4%;
+    margin-top: 43px;
+  }
+  #sect2 .tabmenu p {
+    font-size: 1rem;
+    font-family: pretendard-Regular;
+  }
+  #sect2 .contents {
+    width: 72vw;
+    height: 70vh;
+    margin: 10% auto 0;
+    border: 1px solid #0fd;
+  }
+  #sect2 .contents .tab {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid #f99;
+  }
+  #sect2 .contents .tab .main {
+    border: 1px solid #f00;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 84vw;
+    overflow: hidden;
+    background-image: url(./images/swf_img.png);
+    background-size: cover;
+    background-position: center;
+  }
+  #sect2 .contents .tab .main figure img {
+    max-width: 100%;
+  }
+  #sect2 .contents .tab .info {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 32vw;
+  }
+  #sect2 .contents .tab .info .pg {
+    text-align: center;
+    align-items: center;
+  }
+  #sect2 .contents .tab .info .pg h4 {
+    margin: 23px 28px;
+    font-size: 18px;
+    font-family: pretendard-SemiBold;
+  }
+  #sect2 .contents .tab .info .pg p {
+    margin: 7px;
+    padding: 12px;
+    height: 210px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 15px;
+    font-family: pretendard-Regular;
+  }
+  #sect2 .contents .tab .thumbnail {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgb(162, 91, 255);
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #sect2 .contents .tab .thumbnail .box {
+    border: 1px solid rgb(67, 247, 12);
+    width: 47%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #sect2 .contents .tab .thumbnail .box img {
+    max-width: 100%;
+  }
+  #sect3 {
+    background: #232323;
+  }
+  #sect3 .slideContainer {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #sect3 .slideContainer .videoWrap {
+    position: absolute;
+    left: -1%;
+    transform: translate(7%, 20%);
+    width: 300%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide {
+    width: 20%;
+    position: relative;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide.on:hover .v_info {
+    display: block;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info {
+    width: 20vw;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    text-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info p {
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    font-size: 1.5vw;
+    padding-top: 15px;
+    margin: auto;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info p:nth-child(1) {
+    font-size: 1.5vw;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide video {
+    width: 100%;
+  }
+  #sect3 .slideContainer .pagenation {
+    position: absolute;
+    left: 40%;
+    bottom: 13%;
+    display: none;
+    justify-content: space-between;
+    width: 100px;
+    height: 60px;
+  }
+  #sect3 .slideContainer .pagenation img {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  #sect4 .list {
+    height: 70vh;
+    display: flex;
+  }
+  #sect4 .list .new figure {
+    width: 30vw;
+  }
+  #sect4 .list .new figure img {
+    width: 100%;
+  }
+  #sect4 .sns {
+    height: 30vh;
+    background: #232323;
+    display: flex;
+  }
+  #sect4 .sns figure {
+    width: 80%;
+  }
+  #sect4 .sns figure img {
+    width: 100%;
+  }
+}
+/* 태블릿--------------------------- */
+@media screen and (min-width: 517px) {
+  section {
+    width: 100%;
+    height: 70vw;
+  }
+  h2 {
+    font-size: 2.5vw;
+    font-family: pretendard-Bold;
+    padding-top: 80px;
+  }
+  #sect1 .intro {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #sect1 .intro header {
+    position: fixed;
+    width: 72%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f0f;
+  }
+  #sect1 .intro header h1 {
+    display: inline-block;
+  }
+  #sect1 .intro header h1.logo {
+    height: 25px;
+    width: 50px;
+  }
+  #sect1 .intro header h1.logo img {
+    width: 100%;
+  }
+  #sect1 .intro header h1.menu {
+    height: 25px;
+    width: 25px;
+  }
+  #sect1 .intro header h1.menu img {
+    width: 100%;
+  }
+  #sect1 .intro .desc {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #sect1 .intro .desc h1 {
+    text-align: center;
+  }
+  #sect1 .intro .desc h1 img {
+    width: 300px;
+  }
+  #sect1 .intro .fullvideo {
+    position: relative;
+    height: 69.84vw;
+  }
+  #sect1 .intro .fullvideo video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  #sect2 .tabmenu {
+    flex: 1;
+    gap: 4%;
+    margin-top: 5%;
+  }
+  #sect2 .tabmenu p {
+    font-size: 1rem;
+    font-family: pretendard-Regular;
+  }
+  #sect2 .contents {
+    width: 65vw;
+    height: 30vw;
+    margin: 11% auto 0;
+    border: 1px solid #0fd;
+  }
+  #sect2 .contents .tab {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid #f99;
+  }
+  #sect2 .contents .tab .main {
+    border: 1px solid #f00;
+    position: absolute;
+    left: 0%;
+    width: 74%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(./images/swf_img.png);
+    background-size: cover;
+    background-position: center center;
+  }
+  #sect2 .contents .tab .main figure img {
+    max-width: 100%;
+  }
+  #sect2 .contents .tab .info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 72%;
+  }
+  #sect2 .contents .tab .info .pg {
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  #sect2 .contents .tab .info .pg h4 {
+    margin: 15% 5%;
+    font-size: 1.5vw;
+    font-family: pretendard-SemiBold;
+  }
+  #sect2 .contents .tab .info .pg p {
+    margin: 0 6%;
+    padding: 12px;
+    height: 18vw;
+    text-align: center;
+    word-wrap: normal;
+    font-size: 1.3vw;
+    font-family: pretendard-Regular;
+  }
+  #sect2 .contents .tab .thumbnail {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgb(162, 91, 255);
+    width: 25%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #sect2 .contents .tab .thumbnail .box {
+    border: 1px solid rgb(67, 247, 12);
+    width: 47%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #sect2 .contents .tab .thumbnail .box img {
+    max-width: 100%;
+  }
+  #sect3 {
+    background: #232323;
+  }
+  #sect3 .slideContainer {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #sect3 .slideContainer .videoWrap {
+    position: absolute;
+    left: -1%;
+    transform: translate(-14%, 20%);
+    width: 300%;
+    display: flex;
+    gap: 30px;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide {
+    width: 20%;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide.on:hover .v_info {
+    display: block;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info {
+    width: 20vw;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info p {
+    color: #fff;
+    width: 70%;
+    font-size: 1.9vw;
+    text-align: center;
+    padding-top: 25px;
+    margin: auto;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info p:nth-child(1) {
+    font-size: 2vw;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide video {
+    width: 100%;
+  }
+  #sect3 .slideContainer .pagenation {
+    position: absolute;
+    left: 45%;
+    bottom: 20%;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    height: 60px;
+  }
+  #sect3 .slideContainer .pagenation img {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  #sect4 .list .new p {
+    font-size: 1.2rem;
+    opacity: 0;
+  }
+  #sect4 .list .new figure {
+    width: 20vw;
+  }
+  #sect4 .list .new figure img {
+    width: 100%;
+  }
+  #sect4 .sns figure {
+    width: 80%;
+  }
+  #sect4 .sns figure img {
+    width: 100%;
+  }
+}
+/* PC--------------------------- */
+@media screen and (min-width: 1195px) {
+  section {
+    width: 100%;
+    height: 56vw;
+  }
+  h2 {
+    font-size: 2.5vw;
+    font-family: pretendard-Bold;
+    padding-top: 90px;
+  }
+  #sect1 .intro {
+    position: relative;
+  }
+  #sect1 .intro header {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    border: 1px solid #f0f;
+  }
+  #sect1 .intro header h1 {
+    display: inline-block;
+  }
+  #sect1 .intro header h1.logo {
+    height: 50px;
+    width: 115px;
+  }
+  #sect1 .intro header h1.logo img {
+    width: 100%;
+  }
+  #sect1 .intro header h1.menu {
+    height: 50px;
+    width: 50px;
+  }
+  #sect1 .intro header h1.menu img {
+    width: 100%;
+  }
+  #sect1 .intro .desc {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #sect1 .intro .desc h1 {
+    text-align: center;
+  }
+  #sect1 .intro .desc h1 img {
+    width: 300px;
+  }
+  #sect2 .tabmenu {
+    flex: 1;
+    gap: 4.8%;
+    margin-top: 4.8%;
+  }
+  #sect2 .tabmenu p {
+    font-size: 1.5vw;
+    font-family: pretendard-Regular;
+  }
+  #sect2 .contents {
+    width: 68%;
+    height: 46%;
+    margin: 6% auto 0;
+    border: 1px solid #0fd;
+  }
+  #sect2 .contents .tab {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid #f99;
+  }
+  #sect2 .contents .tab .main {
+    width: 62%;
+    height: 100%;
+    border: 1px solid #f00;
+    position: absolute;
+    transform: translateX(30%);
+  }
+  #sect2 .contents .tab .main figure img {
+    width: 77%;
+    height: 100%;
+  }
+  #sect2 .contents .tab .info {
+    position: absolute;
+    left: 5.3%;
+    top: 10%;
+    width: 23%;
+    height: 80%;
+  }
+  #sect2 .contents .tab .info .pg {
+    text-align: center;
+    align-items: center;
+  }
+  #sect2 .contents .tab .info .pg h4 {
+    margin: 11% 6%;
+    font-size: 1.5vw;
+    font-family: pretendard-SemiBold;
+  }
+  #sect2 .contents .tab .info .pg p {
+    margin: 1% 6%;
+    padding: 4%;
+    height: 210px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 1.2vw;
+    font-family: pretendard-Regular;
+  }
+  #sect2 .contents .tab .thumbnail {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    border: 1px solid rgb(162, 91, 255);
+    width: 18%;
+    height: 100%;
+  }
+  #sect2 .contents .tab .thumbnail .box1 {
+    margin-bottom: 8%;
+  }
+  #sect2 .contents .tab .thumbnail .box {
+    border: 1px solid rgb(255, 177, 8);
+    width: 100%;
+    height: 12vw;
+    overflow: hidden;
+  }
+  #sect2 .contents .tab .thumbnail .box img {
+    width: 100%;
+  }
+  #sect3 {
+    background: #232323;
+  }
+  #sect3 .slideContainer {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #sect3 .slideContainer .videoWrap {
+    position: absolute;
+    left: -1%;
+    transform: translate(-14%, 12%);
+    width: 300%;
+    display: flex;
+    gap: 30px;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide {
+    width: 20%;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide.on:hover .v_info {
+    display: block;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info {
+    width: 20vw;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info p {
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    padding-top: 20px;
+    margin: 10% auto;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide .v_info p:nth-child(1) {
+    font-size: 2vw;
+  }
+  #sect3 .slideContainer .videoWrap .video-slide video {
+    width: 100%;
+  }
+  #sect3 .slideContainer .pagenation {
+    position: absolute;
+    left: 47%;
+    bottom: 20%;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    height: 60px;
+  }
+  #sect3 .slideContainer .pagenation img {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+}
