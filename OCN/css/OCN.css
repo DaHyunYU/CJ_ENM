@@ -1,45 +1,6 @@
 @charset "UTF-8";
 @import url(../font/font.css);
-* {
-  box-sizing: border-box;
-}
-
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-body {
-  margin: 0;
-}
-
-ul,
-ol,
-p {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: "Pretendard-Regular";
-  font-weight: 400;
-  background: #eee;
-}
-
+@import url(../css/reset.css);
 /* 공통 */
 header {
   width: 100vw;
@@ -59,6 +20,13 @@ header .inner .fa-bars {
   display: inline-block;
   color: #fff;
   font-size: 30px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 figure {
@@ -72,7 +40,73 @@ figure {
 
 section {
   position: relative;
-  border: 1px solid #f00;
+}
+
+body {
+  font-family: "Pretendard";
+  font-weight: 400;
+  overflow-x: hidden;
+  background: #eee;
+  overflow-x: hidden;
+}
+
+.menu_wrap {
+  display: none;
+  z-index: 999;
+  width: 20%;
+  height: 100%;
+  background: #ffb414;
+  position: fixed;
+  top: 0;
+  right: -20%;
+  font-size: 2rem;
+  border-radius: 50px 0 0 0;
+}
+.menu_wrap .close {
+  padding: 30px;
+}
+.menu_wrap ul li a {
+  padding: 15px 0 0 30px;
+  font-weight: 700;
+  font-style: italic;
+}
+.menu_wrap ul li a:hover {
+  transition: 0.35s;
+}
+.menu_wrap ul li a:hover span::after {
+  content: "";
+  width: 100%;
+  left: 0%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 3px solid #000;
+  transition: 0.35s;
+}
+.menu_wrap ul li a span {
+  position: relative;
+}
+.menu_wrap ul li a span::after {
+  content: "";
+  width: 0%;
+  left: 50%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 3px solid #000;
+  transition: 0.35s;
+}
+
+.menu_bg {
+  z-index: 980;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  display: none;
 }
 
 #sect1 video {
@@ -114,12 +148,6 @@ section {
   border-radius: 0px 30px 30px 0px;
 }
 
-#sect3 article .slideContainer .ing {
-  border: 1px solid #f00;
-}
-#sect3 article .slideContainer .end {
-  border: 1px solid #f00;
-}
 #sect3 article .slideContainer .ing_list li.box {
   padding: 10px;
   display: inline-block;
@@ -160,6 +188,12 @@ section {
 
 #sect4 figure img {
   display: none;
+}
+#sect4 .box2 .notice {
+  background: #fff;
+}
+#sect4 .box2 .notice ul li a:hover {
+  background: #eee;
 }
 
 #sect5 .banner a img {
@@ -202,13 +236,13 @@ footer {
     text-align: center;
   }
   #sect1 .title ul li {
-    font-size: 6.3vw;
+    font-size: 5.3vw;
   }
   #sect1 .title ul li img {
     width: 100%;
   }
   #sect1 .title ul li:nth-child(2) {
-    font-size: 17vw;
+    font-size: 15vw;
     font-weight: 900;
   }
   #sect2 figure {
@@ -253,7 +287,7 @@ footer {
   #sect2 .bg {
     display: block;
     width: 100%;
-    height: 300%;
+    height: 700%;
     background: #ffcc11;
     position: absolute;
     top: 150px;
@@ -333,6 +367,17 @@ footer {
     display: none;
   }
   #sect3 .bg {
+    display: block;
+    width: 100%;
+    height: 70%;
+    background: #ffcc11;
+    position: absolute;
+    top: 900px;
+    left: 0;
+    z-index: -1;
+    transform: skewY(30deg);
+  }
+  #sect3 .bg img {
     display: none;
   }
   #sect4 figure {
@@ -358,14 +403,35 @@ footer {
     top: 2%;
   }
   #sect4 article .contentsWrap .box1 .slidecontainer01 {
-    margin: 20px 0;
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
   }
-  #sect4 article .contentsWrap .box1 .slidecontainer01 div {
-    width: 152px;
-    height: 100px;
-    background: #333;
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper-button-prev {
+    left: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper-button-next {
+    right: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper {
+    margin: 0;
+    width: 100%;
+    height: 90px;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper {
+    margin: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 150px;
+    margin: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
   }
   #sect4 article .contentsWrap .box2 {
     margin-bottom: 100px;
@@ -385,14 +451,14 @@ footer {
     background: #000;
     position: absolute;
     right: 0;
-    top: 29%;
+    top: 25.5%;
   }
   #sect4 article .contentsWrap .box2 .fa-plus {
     color: #fc7700;
     position: absolute;
     right: 10px;
     font-size: 6vw;
-    top: 30.2%;
+    top: 27%;
   }
   #sect4 article .contentsWrap .box2 .notice {
     margin: 20px 0;
@@ -415,9 +481,6 @@ footer {
   #sect4 article .contentsWrap .box3 {
     width: 250px;
     margin-bottom: 20px;
-  }
-  #sect4 article .contentsWrap .box3 .replay {
-    border: 1px solid #f00;
   }
   #sect4 article .contentsWrap .box3 .replay .btn {
     display: flex;
@@ -479,15 +542,10 @@ footer {
     width: 100%;
   }
   #sect4 .circle {
-    display: block;
-    width: 100%;
-    height: 80%;
-    background: #ffcc11;
-    position: absolute;
-    top: 150px;
-    left: 0;
-    z-index: -2;
-    transform: skewY(20deg);
+    display: none;
+  }
+  #sect4 .TARGET {
+    display: none;
   }
   #sect5 {
     height: 65vh;
@@ -495,6 +553,7 @@ footer {
   }
   #sect5 .banner {
     display: none;
+    vertical-align: top;
   }
   #sect5 .m_banner {
     display: block;
@@ -520,6 +579,17 @@ footer {
     left: 0;
     z-index: -2;
     transform: skewY(-20deg);
+  }
+  footer .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrap .left {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  footer .wrap .right img {
+    margin: 0 10px;
   }
 }
 /* 태블릿 */
@@ -559,13 +629,13 @@ footer {
     text-align: center;
   }
   #sect1 article .title ul li {
-    font-size: 2.4vw;
+    font-size: 2vw;
   }
   #sect1 article .title ul li img {
     width: 100%;
   }
   #sect1 article .title ul li:nth-child(2) {
-    font-size: 6.9vw;
+    font-size: 6vw;
     font-weight: 900;
   }
   #sect2 figure {
@@ -693,6 +763,7 @@ footer {
   #sect3 article .slideContainer li.list_text p {
     letter-spacing: -0.95px;
     line-height: 20px;
+    font-size: 0.9vw;
   }
   #sect3 article .slideContainer .ing ul.ing_list {
     padding: 0 20px;
@@ -713,7 +784,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f00;
     width: 260px;
     height: 260px;
     padding: 10px;
@@ -750,7 +820,6 @@ footer {
   #sect4 article .contentsWrap .box1 {
     width: 100%;
     height: 200px;
-    border: 1px solid #f00;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -771,19 +840,38 @@ footer {
   #sect4 article .contentsWrap .box1 .slidecontainer01 {
     margin-top: 15px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
   }
-  #sect4 article .contentsWrap .box1 .slidecontainer01 div {
-    width: 250px;
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper-button-prev {
+    left: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper-button-next {
+    right: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper {
+    margin: 0;
+    width: 750px;
     height: 150px;
-    margin-left: 10px;
-    background: #666;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper {
+    margin: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 150px;
+    margin: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
   }
   #sect4 article .contentsWrap .box2 {
     width: 65%;
     height: 360px;
     position: relative;
-    border: 1px solid #f00;
   }
   #sect4 article .contentsWrap .box2 h2 {
     margin-top: 10px;
@@ -820,7 +908,6 @@ footer {
   #sect4 article .contentsWrap .box3 .replay {
     position: absolute;
     right: 0;
-    border: 1px solid #f00;
   }
   #sect4 article .contentsWrap .box3 .replay .btn {
     display: flex;
@@ -908,6 +995,19 @@ footer {
   footer .wrap {
     width: 1100px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .wrap .left {
+    line-height: 2rem;
+  }
+  footer .wrap .right {
+    display: flex;
+  }
+  footer .wrap .right img {
+    width: 40px;
+    height: 38px;
+    margin: 10px;
   }
 }
 /* PC */
@@ -937,7 +1037,7 @@ footer {
     color: #fff;
   }
   #sect1 article .title ul {
-    width: 17vw;
+    width: 18vw;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -946,13 +1046,13 @@ footer {
     text-align: center;
   }
   #sect1 article .title ul li {
-    font-size: 1.8vw;
+    font-size: 1.4vw;
   }
   #sect1 article .title ul li img {
     width: 100%;
   }
   #sect1 article .title ul li:nth-child(2) {
-    font-size: 4.9vw;
+    font-size: 4.5vw;
     font-weight: 900;
   }
   #sect2 figure {
@@ -1078,8 +1178,9 @@ footer {
     color: #ffb414;
   }
   #sect3 article .slideContainer li.list_text p {
-    letter-spacing: -0.95px;
+    letter-spacing: -0.8px;
     line-height: 20px;
+    font-size: 0.7vw;
   }
   #sect3 article .slideContainer .ing ul.ing_list {
     padding: 0 50px;
@@ -1100,7 +1201,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f00;
     width: 260px;
     height: 260px;
     padding: 10px;
@@ -1114,6 +1214,7 @@ footer {
   }
   #sect4 {
     height: 100vh;
+    width: 100vw;
   }
   #sect4 figure img {
     display: block;
@@ -1123,6 +1224,8 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    -webkit-animation: twink 1s step-end infinite;
+            animation: twink 1s step-end infinite;
   }
   #sect4 article {
     z-index: 10;
@@ -1143,7 +1246,6 @@ footer {
     width: 900px;
     height: 317px;
     display: block;
-    border: 1px solid #f00;
   }
   #sect4 article .contentsWrap .box1 h2 {
     position: relative;
@@ -1162,17 +1264,36 @@ footer {
     display: flex;
     justify-content: space-between;
   }
-  #sect4 article .contentsWrap .box1 .slidecontainer01 div {
-    width: 250px;
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper-button-prev {
+    left: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper-button-next {
+    right: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper {
+    margin: 0;
+    width: 900px;
     height: 150px;
-    margin-right: 10px;
-    background: #666;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper {
+    margin: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 150px;
+    margin: 0;
+  }
+  #sect4 article .contentsWrap .box1 .slidecontainer01 .swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
   }
   #sect4 article .contentsWrap .box2 {
     position: relative;
     width: 900px;
     height: 347px;
-    border: 1px solid #f00;
     display: block;
   }
   #sect4 article .contentsWrap .box2 h2 {
@@ -1206,9 +1327,6 @@ footer {
     margin-top: 50px;
     width: 400px;
     height: 580px;
-  }
-  #sect4 article .contentsWrap .box3 .replay {
-    border: 1px solid #f00;
   }
   #sect4 article .contentsWrap .box3 .replay .btn {
     display: flex;
@@ -1271,6 +1389,13 @@ footer {
     bottom: -20%;
     z-index: -2;
   }
+  #sect4 .TARGET {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+  }
   #sect5 .banner {
     width: 100%;
   }
@@ -1294,5 +1419,28 @@ footer {
   footer .wrap {
     width: 1600px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .wrap .left p span {
+    padding-right: 10px;
+  }
+  footer .wrap .right {
+    display: flex;
+    align-items: center;
+  }
+  footer .wrap .right img {
+    width: 30px;
+    margin: 10px;
   }
 }
+@-webkit-keyframes twink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes twink {
+  50% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=OCN.css.map */
